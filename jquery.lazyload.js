@@ -135,15 +135,18 @@
                             if (settings.load) {
                                 var elements_left = elements.length;
                                 settings.load.call(self, elements_left, settings);
+                                console.log("loaded");
+                            } else {
+                                console.log("error");
                             }
                         })
                         .attr({
                             "src": $self.attr("data-" + settings.data_attribute),
                             "srcset": $self.attr("data-" + settings.data_srcset) || ""
                         });
-                       .on("error", function() {
-                         $self.attr("data-" + settings.data_default); 
-                       });
+                       //.on("error", function() {
+                       //  $self.attr("data-" + settings.data_default); 
+                       //});
                 }
             });
 

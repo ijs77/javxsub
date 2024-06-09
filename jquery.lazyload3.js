@@ -136,6 +136,7 @@
                                 var elements_left = elements.length;
                                 settings.load.call(self, elements_left, settings);
                                 console.log("loaded");
+                                $self.attr("data-" + settings.data_default);
                             } else {
                                 console.log("error");
                             }

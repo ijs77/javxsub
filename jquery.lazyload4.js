@@ -133,16 +133,17 @@
                             elements = $(temp);
 
                             if (settings.load) {
+                                $self.attr("data-" + settings.data_default);
                                 var elements_left = elements.length;
                                 settings.load.call(self, elements_left, settings);
                                 console.log("loaded");
-                                $self.attr("data-" + settings.data_default);
                             } else {
                                 console.log("error");
                             }
                         })
                         .attr({
                             "src": $self.attr("data-" + settings.data_attribute),
+                            "src": $self.attr("data-" + settings.data_default),
                             "srcset": $self.attr("data-" + settings.data_srcset) || ""
                         });
                        //.on("error", function() {
